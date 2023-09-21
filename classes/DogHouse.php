@@ -1,8 +1,8 @@
 <?php
-include_once  __DIR__ . '/products.php';
-include_once __DIR__ . '/../traits/WithSize.php';
+require_once  __DIR__ . '/Products.php';
+require_once __DIR__ . '/../traits/WithSize.php';
 
-class DogHouse extends Product
+class DogHouse extends Products
 {
     use WithSize;
 

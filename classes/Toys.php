@@ -1,8 +1,8 @@
 <?php
-include_once  __DIR__ . '/products.php';
-include_once __DIR__ . '/../traits/WithSize.php';
+require_once  __DIR__ . '/Products.php';
+require_once __DIR__ . '/../traits/WithSize.php';
 
-class Toys extends Product
+class Toys extends Products
 {
     use WithSize;
     protected $type = 'gioco';
@@ -32,11 +32,8 @@ class Toys extends Product
     {
         return $this->img;
     }
-    // public function setSize($size)
-    // {
-    //     return 'ciao';
-    //     $this->size = $size;
-    // }
+
+
 
 
     public function setMaterial($material)

@@ -1,17 +1,11 @@
 <?php
-class product
+class products
 {
 
     protected $name;
     protected $description;
     protected $price;
 
-    // public function __construct($_name, $_description, $_price)
-    // {
-    //     $this->setName($_name);
-    //     $this->setDescription($_description);
-    //     $this->setPrice($_price);
-    // }
 
     public function getName()
     {
@@ -36,10 +30,12 @@ class product
 
     public function setPrice($price)
     {
-        if (!is_numeric($price)) return false;
+        if (!is_numeric($price))
+            throw new Exception('prezzo non valido');
         $this->price = $price;
-        return true;
     }
+
+
 
     public function setDescription($desc)
     {
