@@ -1,8 +1,10 @@
 <?php
 include_once  __DIR__ . '/products.php';
+include_once __DIR__ . '/../traits/WithSize.php';
 
 class DogHouse extends Product
 {
+    use WithSize;
 
     protected $type = 'cuccia';
     protected $material;
@@ -11,13 +13,14 @@ class DogHouse extends Product
 
 
 
-    public function __construct($_name, $_description, $_material, $_price, $_img, $_species)
+    public function __construct($_name, $_description, $_material, $_price, $_img, $_species, $_size)
     {
         $this->setName($_name);
         $this->setDescription($_description);
         $this->setPrice($_price);
         $this->img = $_img;
         $this->setSpecies($_species);
+        $this->setSize($_size);
 
         $this->setMaterial($_material);
     }

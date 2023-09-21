@@ -1,8 +1,10 @@
 <?php
 include_once  __DIR__ . '/products.php';
+include_once __DIR__ . '/../traits/WithSize.php';
 
 class Food extends Product
 {
+    use WithSize;
 
     protected $type = 'croccantini';
     protected $composition;
@@ -11,13 +13,14 @@ class Food extends Product
 
 
 
-    public function __construct($_name, $_description, $_composition, $_price, $_img, $_species)
+    public function __construct($_name, $_description, $_composition, $_price, $_img, $_species, $_size)
     {
         $this->setName($_name);
         $this->setDescription($_description);
         $this->setPrice($_price);
         $this->img = $_img;
         $this->setSpecies($_species);
+        $this->setSize($_size);
 
         $this->setComposition($_composition);
     }

@@ -1,16 +1,17 @@
 <?php
 include_once  __DIR__ . '/products.php';
+include_once __DIR__ . '/../traits/WithSize.php';
 
 class Toys extends Product
 {
-
+    use WithSize;
     protected $type = 'gioco';
     protected $material;
     protected $img;
     protected $species;
 
 
-    public function __construct($_name, $_description, $_material, $_price, $_img, $_species)
+    public function __construct($_name, $_description, $_material, $_price, $_img, $_species, $_size)
     {
         $this->setName($_name);
         $this->setDescription($_description);
@@ -19,6 +20,7 @@ class Toys extends Product
         $this->img = $_img;
         $this->setMaterial($_material);
         $this->setSpecies($_species);
+        $this->setSize($_size);
     }
 
     public function getMaterial()
@@ -30,7 +32,11 @@ class Toys extends Product
     {
         return $this->img;
     }
-
+    // public function setSize($size)
+    // {
+    //     return 'ciao';
+    //     $this->size = $size;
+    // }
 
 
     public function setMaterial($material)
